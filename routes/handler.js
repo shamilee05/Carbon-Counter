@@ -13,13 +13,11 @@ router.get('/',(req,res)=>{
 
 
 router.get('/vehicle',(req,res)=>{
-    console.log("herloe?");
    res.render('vehicle',{layout: 'vehicle.handlebars'});
 });
 
 
 router.post('/vehicle',(req,res)=>{
-    console.log("here>???");
 
 console.log(req.body.type);
 
