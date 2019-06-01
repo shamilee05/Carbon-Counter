@@ -58,4 +58,93 @@ console.log("really ? ");
     });
 }
 
+
+router.get('/appliance',(req,res)=>{
+   res.render('appliance',{layout: 'appliance.handlebars'});
+});
+
+
+
+router.post('/appliance',(req,res)=>{
+
+
+let url = "https://www.carbonhub.org/v1/appliances",
+    data = {
+     "appliance":req.body.appliance,
+    "type":req.body.type,
+    "region":req.body.region,
+    "quantity":req.body.qty,
+    "running_time":req.body.rt
+    },
+    headers = {
+    "access-key":"ccbeca73-e148-5f81-886e-64e191f920bb",
+    "Content-Type":"application/json"
+    };
+getApplianceEmissions(url,data,headers);
+
+});
+
+
+function getApplianceEmissions(url,data,headers){
+
+    var options = {
+        url: url,
+        method : 'POST' , 
+        headers: headers,
+        form: data
+    }
+    request(options, function (error, response, body) {
+// console.log(response.body);
+// console.log(error.body);
+console.log(response.statusCode);
+        if (!error && response.statusCode == 200) {
+console.log("HI");            // Print out the response body
+            console.log(body);
+console.log("really ? ");
+        }
+    });
+}
+
+
+
+
+router.get('/power',(req,res)=>{
+   res.render('power',{layout: 'power.handlebars'});
+});
+
+
+router.post('/power',(req,res)=>{
+
+let url = "https://www.carbonhub.org/v1/emissions",
+    data = {
+    "item": "electricity",
+    "region": req.body.reg,
+    "unit": req.body.unit,
+    "quantity": req.body.qty
+    },
+    //use your api key here
+    headers = {
+    "access-key":"ccbeca73-e148-5f81-886e-64e191f920bb",
+    "Content-Type":"application/json"
+    };
+    getEmissions(url,data,headers);
+
+});
+
+function getEmissions(url,data,headers){
+    var options = {
+        url: url,
+        method: 'POST',
+        headers: headers,
+        form: data
+    }
+    request(options, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            // Print out the response body
+            console.log(body) ; 
+        }
+    });
+}
+
+
 module.exports=router;

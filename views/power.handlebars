@@ -1,0 +1,35 @@
+
+<!doctype html>
+<html>
+<head>
+    
+    <link rel="stylesheet" type="text/css" href="css/signinup.css">   
+    <title>Enter electiciy info </title>
+</head>
+    
+    <body>
+    
+    <div class="login-box" style="width:300px; height:900">
+    <img src="avatar.png" class="avatar">
+
+        <h1>Welcome!!</h1>
+            {{#if error}}
+      <p> <em>{{error}}</em> </p>
+            {{/if}}
+            <form method="POST">
+         
+<input type="text" required name="reg" placeholder="Enter country">
+<input type="text" required name="unit" placeholder="Enter unit">
+<input type="text" required name="qty" placeholder="Enter qty">
+
+            <input id="#signin" type="submit" name="submit" value="Login">
+            <a href="/signup" id="#signup">Don't have an Account?</a>   <br>
+            </form>
+        
+    </div>
+        <script src="./javascript/frontsignin.js"></script>
+    </body>
+</html>
+
+
+

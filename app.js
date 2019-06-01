@@ -3,13 +3,12 @@ var path = require('path');
 var app = express();
 var handler = require('./routes/handler');
 const mime = require('mime');
-var port = process.env.PORT ;
+var port = 5000;
+// var port = process.env.PORT ;
 var request = require('request');
 var exphbs = require('express-handlebars');
 
 var handlebars = require('express-handlebars');
-
-
 
 app.use(express.static(path.join(__dirname,"public")));
 // app.use(require('cookie-parser')());
