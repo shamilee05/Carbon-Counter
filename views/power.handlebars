@@ -4,6 +4,8 @@
 <head>
     
     <link rel="stylesheet" type="text/css" href="css/signinup.css">   
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+<script> window.onLoadCallback = function(){ gapi.auth2.init({ client_id: 'filler_text_for_client_id.apps.googleusercontent.com' }); } </script>
     <title>Enter electiciy info </title>
 </head>
     
@@ -22,8 +24,7 @@
 <input type="text" required name="unit" placeholder="Enter unit">
 <input type="text" required name="qty" placeholder="Enter qty">
 
-            <input id="#signin" type="submit" name="submit" value="Login">
-            <a href="/signup" id="#signup">Don't have an Account?</a>   <br>
+            <input id="#signin" type="submit" name="submit" value="Calculate">
             </form>
         
     </div>

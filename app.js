@@ -4,6 +4,12 @@ var app = express();
 var handler = require('./routes/handler');
 const mime = require('mime');
 // var port = 7000 ;
+
+// var session=require('express-session');
+var cookieParser = require('cookie-parser');
+app.use(cookieParser());
+// document.write('<script type="text/javascript" src = "https://apis.google.com/js/platform.js"></script>');
+
 var port = process.env.PORT;
 var request = require('request');
 var exphbs = require('express-handlebars');
@@ -15,54 +21,57 @@ app.use(express.static(path.join(__dirname,"public")));
 app.use(require('body-parser').urlencoded({ extended: true }));
 
 
+
+// app.use(session({
+//    // key: 'session_cookie_name',
+//     secret: 'session_cookie_secret',
+//     store: sessionStore,
+//     resave: false,
+//     saveUninitialized: false
+// }));
+
+// var profile ,fname,lname,email ; 
+//     function init() {
+
+// console.log(fname+"HEREEEEE?");
+
+
+//         gapi.load('auth2',function(){
+// console.log(fname+"HEREEEEE?");
+
+// var GoogleUser = GoogleAuth.currentUser.get();
+// // if(GoogleUser.isSignedIn())
+// // {
+// profile = GoogleUser.getBasicProfile();
+  
+//    fname =   profile.getGivenName();
+
+//    lname =   profile.getFamilyName();
+//   // var lname =   $("#email").text(profile.getFamilyName);
+//   email =   profile.getEmail();
+
+// res1 = [] ;
+//    res1.cookie('fname', fname).send('cookie set'); //Sets name = express
+//    res1.cookie('fname', fname).send('cookie set'); //Sets name = express
+//    res1.cookie('fname', fname).send('cookie set'); //Sets name = express
+
+
+// console.log(fname+"HEREEEEE?");
+
+//         });
+//     }
+
+
+
+
 app.engine('handlebars', exphbs({
   defaultLayout: 'main',
   layoutsDir: path.join(__dirname, '/views')
 }));
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'handlebars');
-
+// init();
 app.listen(port,()=>{
 app.use('/',handler);
-
 });
-// let url = "https://www.carbonhub.org/v1/vehicle",
-//     data = {
-//     "type": "Petrol",
-//     "origin": "Bhubaneswar",
-//     "destination": "Mumbai",
-//     "mileage": 50,
-//     "mileage_unit": "km/l"
-//     },
-//     headers = {
-//     "access-key":"ccbeca73-e148-5f81-886e-64e191f920bb",
-//     "Content-Type":"application/json"
-//     };
-
-// function getVehicleEmissions(url,data,headers){
-
-//     var options = {
-//         url: url,
-// method : 'POST' , 
-//         headers: headers,
-//         form: data
-//     }
-//     request(options, function (error, response, body) {
-// // console.log(response.body);
-// // console.log(error.body);
-// console.log(response.statusCode);
-//         if (!error && response.statusCode == 200) {
-// console.log("HI");            // Print out the response body
-//             console.log(body);
-// console.log("really ? ");
-//         }
-//     });
-// }
-
-// app.listen(port,()=>{
-// getVehicleEmissions(url,data,headers);
-//     console.log('listening');
-// });
-
-
 module.exports = app;

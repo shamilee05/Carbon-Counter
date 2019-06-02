@@ -9,6 +9,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <meta name="google-signin-client_id" content="315808160827-40u5j7ej4t43sruumkoagffsa8mql83v.apps.googleusercontent.com">
   <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+  <script> window.onLoadCallback = function(){ gapi.auth2.init({ client_id: 'filler_text_for_client_id.apps.googleusercontent.com' }); } </script>
 </head>
 <body>
     
@@ -41,6 +43,31 @@
         });
 
     }
+
+var profile ,fname,lname,email ; 
+
+        gapi.load('auth2',function(){
+console.log(fname+"HEREEEEE?");
+
+var GoogleUser = GoogleAuth.currentUser.get();
+// if(GoogleUser.isSignedIn())
+// {
+profile = GoogleUser.getBasicProfile();
+  
+   fname =   profile.getGivenName();
+
+   lname =   profile.getFamilyName();
+  // var lname =   $("#email").text(profile.getFamilyName);
+  email =   profile.getEmail();
+
+console.log(fname+"HEREEEEE?");
+
+document.cookie = fname ;
+    
+
+        });
+    
+
 
     </script>
 </body>

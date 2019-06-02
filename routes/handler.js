@@ -5,10 +5,44 @@ var path = require('path');
 const mime = require('mime');
 //var multer = require('multer');
 var request = require('request');
+var query = require('.././model/queries');
+const { requ, GraphQLClient } =require('graphql-request');
+
+var result = require('./../app');
+// var result = require('./../res1');
+
+
+// var profile ,fname,lname,email ; 
+//     function init() {
+
+// console.log(fname+"HEREEEEE?");
+
+
+//         gapi.load('auth2',function(){
+// console.log(fname+"HEREEEEE?");
+
+// var GoogleUser = GoogleAuth.currentUser.get();
+// // if(GoogleUser.isSignedIn())
+// // {
+// profile = GoogleUser.getBasicProfile();
+  
+//    fname =   profile.getGivenName();
+
+//    lname =   profile.getFamilyName();
+//   // var lname =   $("#email").text(profile.getFamilyName);
+//   email =   profile.getEmail();
+
+// console.log(fname+"HEREEEEE?");
+
+//         });
+//     }
+
 
 router.get('/',(req,res)=>{
     console.log("here?");
    res.render('main');
+
+
 });
 
 
@@ -59,20 +93,32 @@ console.log(response.statusCode);
         if (!error && response.statusCode == 200) {
 console.log("HI");            // Print out the response body
             console.log(body);
+
+
+body.push({"fname":result.fname});
+body.push({"lname":result.name});
+body.push({"email":result.email});
+
+console.log(body);
+
+console.log("FUCKKKKKKKKKKKK");
+
+requ(endpoint, query, body).then(data => console.log(data))
+
+
+
 console.log("really ? ");
         }
     });
 }
 
 
+
 router.get('/appliance',(req,res)=>{
    res.render('appliance',{layout: 'appliance.handlebars'});
 });
 
-
-
 router.post('/appliance',(req,res)=>{
-
 
 let url = "https://www.carbonhub.org/v1/appliances",
     data = {
@@ -106,7 +152,6 @@ console.log(response.statusCode);
         if (!error && response.statusCode == 200) {
 console.log("HI");            // Print out the response body
             console.log(body);
-console.log("really ? ");
         }
     });
 }
