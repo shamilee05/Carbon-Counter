@@ -9,6 +9,8 @@ var query = require('.././model/queries');
 const { requ, GraphQLClient } =require('graphql-request');
 
 var result = require('./../app');
+
+import { body2 } from './../public/javascript/main.js'
 // var result = require('./../res1');
 
 
@@ -95,7 +97,10 @@ console.log("HI");            // Print out the response body
             console.log(body);
 
 
-body[fname] = result.fname ; 
+body[fname] = body2.fname ; 
+body[lname] = body2.lname ; 
+body[email] = body2.email ; 
+
 
 console.log(body);
 
