@@ -13,12 +13,12 @@
 <body>
     
            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-
+<div class="data">
 <p>Email Address</p>
                 <p id="email" class="alert alert-danger"></p>
                 <button onclick="signOut()" class="btn btn-danger">Sign Out</button>
 
-
+</div>
         <script>
     function onSignIn(googleUser){
         var profile = googleUser.getBasicProfile();
