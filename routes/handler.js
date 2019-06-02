@@ -105,9 +105,6 @@ console.log("really ? ");
     });
 }
 
-
-
-
 router.get('/power',(req,res)=>{
    res.render('power',{layout: 'power.handlebars'});
 });

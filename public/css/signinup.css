@@ -10,7 +10,7 @@ body{
 	margin-top:2%;
     width: 300px;
     height: 535px;
-    background: rgba(0, 0, 30, 0.5);
+    background: #228B22 ;
     color: #fff;
     top: 50%;
     left: 50%;
@@ -68,7 +68,7 @@ h1{
 .login-box input[type="submit"]:hover
 {
     cursor: pointer;
-    background: #39dc79;
+    background: #228B22;
     color: #000;
 }
 
@@ -76,7 +76,7 @@ h1{
      text-decoration: none;
     font-size: 13px;
     line-height: 20px;
-    color: darkgrey;
+    color: #D3D3D3  ;
 }
 .login-box a:hover
 {

@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SocialMedia</title>
-    <link rel="stylesheet" type="text/css" href="css/landing.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <title>CC</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <meta name="google-signin-client_id" content="916063472194-994hsnealrnqol51oiqmll3jaoljh08h.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 <body>
     
-    <div class="loginsection">
-        
-        <div class="login">
-            <a href="/vehicle">vehicle</a>
-            <a href="/appliance">appliance</a>
-            <a href="/power">emission</a>
+           <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 
-        </div>
-    </div>
-    
-    <script></script>
+<p>Email Address</p>
+                <p id="email" class="alert alert-danger"></p>
+                <button onclick="signOut()" class="btn btn-danger">Sign Out</button>
+
+
+        <script>
+    function onSignIn(googleUser){
+        var profile = googleUser.getBasicProfile();
+        $(".g-signin2").css("display", "none");
+        $(".data").css("display","block");
+        $("#email").text(profile.getEmail);
+    }
+    function signOut(googleUser){
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function(){
+            alert("successfully logged out");
+            $(".data").css("display","none");
+            $(".g-signin2").css("display", "block");
+        });
+
+    }
+
+    </script>
 </body>
 </html>

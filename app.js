@@ -3,7 +3,7 @@ var path = require('path');
 var app = express();
 var handler = require('./routes/handler');
 const mime = require('mime');
-var port = 5000;
+var port = 7000;
 // var port = process.env.PORT ;
 var request = require('request');
 var exphbs = require('express-handlebars');
@@ -26,9 +26,6 @@ app.listen(port,()=>{
 app.use('/',handler);
 
 });
-
- 
-
 // let url = "https://www.carbonhub.org/v1/vehicle",
 //     data = {
 //     "type": "Petrol",
