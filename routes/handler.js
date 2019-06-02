@@ -12,6 +12,12 @@ router.get('/',(req,res)=>{
 });
 
 
+router.get('/main2',(req,res)=>{
+    console.log("here11?");
+   res.render('main2');
+});
+
+
 router.get('/vehicle',(req,res)=>{
    res.render('vehicle',{layout: 'vehicle.handlebars'});
 });

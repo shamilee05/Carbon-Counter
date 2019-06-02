@@ -13,6 +13,9 @@
 <body>
     
            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+
+
+
 <div class="data">
 <p>Email Address</p>
                 <p id="email" class="alert alert-danger"></p>
@@ -25,6 +28,9 @@
         $(".g-signin2").css("display", "none");
         $(".data").css("display","block");
         $("#email").text(profile.getEmail);
+
+        window.location.href = "/main2" ;
+
     }
     function signOut(googleUser){
         var auth2 = gapi.auth2.getAuthInstance();
