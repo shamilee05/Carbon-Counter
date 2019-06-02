@@ -3,8 +3,8 @@ var path = require('path');
 var app = express();
 var handler = require('./routes/handler');
 const mime = require('mime');
-// var port = 7000 ;
-var port = process.env.PORT ;
+var port = 7000 ;
+// var port = process.env.PORT ;
 var request = require('request');
 var exphbs = require('express-handlebars');
 

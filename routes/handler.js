@@ -14,7 +14,7 @@ router.get('/',(req,res)=>{
 
 router.get('/main2',(req,res)=>{
     console.log("here11?");
-   res.render('main2');
+   res.render('main2',{layout: 'main2.handlebars'});
 });
 
 
