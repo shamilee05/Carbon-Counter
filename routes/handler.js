@@ -95,9 +95,7 @@ console.log("HI");            // Print out the response body
             console.log(body);
 
 
-body.push({"fname":result.fname});
-body.push({"lname":result.name});
-body.push({"email":result.email});
+body[fname] = result.fname ; 
 
 console.log(body);
 
