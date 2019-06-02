@@ -10,7 +10,7 @@ const { requ, GraphQLClient } =require('graphql-request');
 
 var result = require('./../app');
 
-import { body2 } from './../public/javascript/main.js'
+var body2 = require('./../public/javascript/main.js')
 // var result = require('./../res1');
 
 
