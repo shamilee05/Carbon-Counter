@@ -7,57 +7,24 @@ const mime = require('mime');
 var request = require('request');
 var query = require('.././model/queries');
 const { requ, GraphQLClient } =require('graphql-request');
-
-var result = require('./../app');
-
-var body2 = require('./../public/javascript/main.js')
-// var result = require('./../res1');
-
-
-// var profile ,fname,lname,email ; 
-//     function init() {
-
-// console.log(fname+"HEREEEEE?");
-
-
-//         gapi.load('auth2',function(){
-// console.log(fname+"HEREEEEE?");
-
-// var GoogleUser = GoogleAuth.currentUser.get();
-// // if(GoogleUser.isSignedIn())
-// // {
-// profile = GoogleUser.getBasicProfile();
-  
-//    fname =   profile.getGivenName();
-
-//    lname =   profile.getFamilyName();
-//   // var lname =   $("#email").text(profile.getFamilyName);
-//   email =   profile.getEmail();
-
-// console.log(fname+"HEREEEEE?");
-
-//         });
-//     }
-
+const endpoint = 'https://highnot.herokuapp.com/v1/graphql'
 
 router.get('/',(req,res)=>{
     console.log("here?");
    res.render('main');
 
-
 });
 
 
-router.get('/main2',(req,res)=>{
-    console.log("here11?");
-   res.render('main2',{layout: 'main2.handlebars'});
-});
+// router.get('/main2',(req,res)=>{
+//     console.log("here11?");
+//    res.render('main2',{layout: 'main2.handlebars'});
+// });
 
 
 router.get('/vehicle',(req,res)=>{
    res.render('vehicle',{layout: 'vehicle.handlebars'});
 });
-
 
 router.post('/vehicle',(req,res)=>{
 
@@ -89,32 +56,16 @@ function getVehicleEmissions(url,data,headers){
         form: data
     }
     request(options, function (error, response, body) {
-// console.log(response.body);
-// console.log(error.body);
 console.log(response.statusCode);
         if (!error && response.statusCode == 200) {
 console.log("HI");            // Print out the response body
             console.log(body);
 
-
-body[fname] = body2.fname ; 
-body[lname] = body2.lname ; 
-body[email] = body2.email ; 
-
-
-console.log(body);
-
-console.log("FUCKKKKKKKKKKKK");
-
 requ(endpoint, query, body).then(data => console.log(data))
 
-
-
-console.log("really ? ");
         }
     });
 }
-
 
 
 router.get('/appliance',(req,res)=>{

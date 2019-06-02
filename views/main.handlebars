@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CC</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <meta name="google-signin-client_id" content="315808160827-40u5j7ej4t43sruumkoagffsa8mql83v.apps.googleusercontent.com">
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>CarbonCounter</title>
+    <link rel="stylesheet" type="text/css" href="css/landing.css">
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-  <script> window.onLoadCallback = function(){ gapi.auth2.init({ client_id: 'filler_text_for_client_id.apps.googleusercontent.com' }); } </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<script> window.onLoadCallback = function(){ gapi.auth2.init({ client_id: 'filler_text_for_client_id.apps.googleusercontent.com' }); } </script>
 </head>
 <body>
     
-           <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <div class="loginsection">
+        
+        <div class="login">
+            <a href="/vehicle">vehicle</a>
+            <a href="/appliance">appliance</a>
+            <a href="/power">emission</a>
 
-
-
-<div class="data">
-<p>Email Address</p>
-                <p id="email" class="alert alert-danger"></p>
-                <button onclick="signOut()" class="btn btn-danger">Sign Out</button>
-
-</div>
-<script scr="./public/javascript/main.js"></script>
+        </div>
+    </div>
+    
 </body>
 </html>

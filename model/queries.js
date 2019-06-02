@@ -1,34 +1,9 @@
 const { request } = require('graphql-request')
 
-// document.write('<script type="text/javascript" src = "https://apis.google.com/js/platform.js"></script>');
-
-// var profile ,fname,lname,email ; 
-//     function init() {
-//         gapi.load('auth2',function(){
-
-// var GoogleUser = GoogleAuth.currentUser.get();
-// // if(GoogleUser.isSignedIn())
-// // {
-// profile = GoogleUser.getBasicProfile();
-  
-//    fname =   profile.getGivenName();
-
-//    lname =   profile.getFamilyName();
-//   // var lname =   $("#email").text(profile.getFamilyName);
-//   email =   profile.getEmail();
-
-// console.log(fname);
-
-//         });
-//     }
-
 var queries ;
 async function main() {
 
-
-
-  const endpoint = 'https://highnot.herokuapp.com/v1/graphql'
-
+const endpoint = 'https://highnot.herokuapp.com/v1/graphql'
 
  queries = /* GraphQL */ `
     mutation upsertInfo(
