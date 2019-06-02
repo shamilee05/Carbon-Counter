@@ -38,7 +38,6 @@ profile = GoogleUser.getBasicProfile();
     lname: lname,
     email: email
   };
-  export {body2}
 
 console.log(fname+"HEREEEEE?");
 
@@ -46,3 +45,5 @@ console.log(fname+"HEREEEEE?");
 
         });
     
+
+    module.export = body2 ;
