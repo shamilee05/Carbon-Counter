@@ -64,7 +64,7 @@ email : email ,
   const variables = {
     ch4: 32.90,
     co2: 11.23,
-    n2o: 12.1
+    n2o: 10.1
   }
 
   const data = await request(endpoint, queries, variables)
